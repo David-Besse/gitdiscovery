@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import pokemonRoutes from './routes/index.js';
 
-dotenv.config({ path: '../.env' });
+dotenv.config({ path: './.env' });
 
 const app = express();
 const PORT = process.env.PORT;
