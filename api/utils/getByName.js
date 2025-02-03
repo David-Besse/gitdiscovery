@@ -1,6 +1,6 @@
-import axios from "axios";
+const axios = require("axios");
 
-export async function getByName(name) {
+async function getByName(name) {
   try {
     const response = await axios.get(
       `https://pokeapi.co/api/v2/pokemon/${name}`
@@ -8,6 +8,8 @@ export async function getByName(name) {
     console.log(response);
     return response.data;
   } catch (e) {
-    throw new Error(e);
+    throw "error";
   }
 }
+
+module.exports = { getByName };

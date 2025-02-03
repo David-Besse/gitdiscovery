@@ -1,8 +1,8 @@
 import dotenv from "dotenv";
 import express from "express";
 
-import { getByName } from "./utils/getByName.js";
-import { getByNumber } from "./utils/getByNumber.js";
+const { getByName } = require("./utils/getByName");
+const { getByNumber } = require("./utils/getByNumber");
 
 dotenv.config({ path: "./.env" });
 
