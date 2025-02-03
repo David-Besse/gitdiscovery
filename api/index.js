@@ -17,10 +17,11 @@ app.get('/pokemon/:name', async (req, res) => {
     }
 });
 
-//get all pokemons
-app.get('/pokemons', async (req, res) => {
+//get a number of pokemons
+app.get('/pokemons/:number', async (req, res) => {
+    const { number } = req.params;
     try {
-        const response = await axios.get('https://pokeapi.co/api/v2/pokemon');
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${number}`);
         res.json(response.data);
     } catch (error) {
         res.status(500).json({ error: 'Erreur lors de la récupération des données' });
