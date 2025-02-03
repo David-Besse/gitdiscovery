@@ -31,3 +31,15 @@ export const getRegionByNumber = async (req, res) => {
         res.status(500).json({ error: 'Erreur lors de la récupération des données' });
     }
 };
+
+//get pokemon's forms
+
+export const getPokemonFormsByName = async (req, res) => {
+    const { name } = req.params;
+    try {
+        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon-form/${name}`);
+        res.json(response.data);
+    } catch (error) {
+        res.status(500).json({ error: 'Erreur lors de la récupération des données' });
+    }
+}
