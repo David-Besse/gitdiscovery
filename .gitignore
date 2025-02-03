@@ -1,4 +1,5 @@
 gacp.bat
+
 .env
 
-nodes_modules
+node_modules
