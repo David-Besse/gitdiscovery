@@ -12,7 +12,7 @@ dotenv.config({ path: '../.env' });
 const app = express();
 const PORT = process.env.PORT;
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "../front")));
 app.use('', pokemonRoutes);
 
 app.listen(PORT, () => {
