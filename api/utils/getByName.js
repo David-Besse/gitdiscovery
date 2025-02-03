@@ -5,6 +5,7 @@ export async function getByName(name) {
     const response = await axios.get(
       `https://pokeapi.co/api/v2/pokemon/${name}`
     );
+    console.log(response);
     return response.data;
   } catch (e) {
     throw new Error(e);
