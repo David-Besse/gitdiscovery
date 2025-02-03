@@ -20,3 +20,14 @@ export const getPokemonsByNumber = async (req, res) => {
         res.status(500).json({ error: 'Erreur lors de la récupération des données' });
     }
 };
+
+//get a region
+export const getRegionByNumber = async (req, res) => {
+    const { number } = req.params;
+    try {
+        const response = await axios.get(`https://pokeapi.co/api/v2/region/${number}`);
+        res.json(response.data);
+    } catch (error) {
+        res.status(500).json({ error: 'Erreur lors de la récupération des données' });
+    }
+};
