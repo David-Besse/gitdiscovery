@@ -1,12 +1,18 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import pokemonRoutes from './routes/index.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-dotenv.config({ path: './.env' });
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+dotenv.config({ path: '../.env' });
 
 const app = express();
 const PORT = process.env.PORT;
 
+app.use(express.static(path.join(__dirname, "public")));
 app.use('', pokemonRoutes);
 
 app.listen(PORT, () => {
