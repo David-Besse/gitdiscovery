@@ -1,5 +1,27 @@
-# API Trouve ton pokemon
+# Simple api wrapping pokeapi's api
 
-## Laisse moi les droits DAVID
+## Routes
 
-**_Test_**
+### GET /pokemon/${name}
+
+```js
+name: string
+```
+
+```json
+{
+    ...
+}
+```
+
+### GET /pokemon/${number}
+
+```js
+number: string
+```
+
+```json
+{
+    ...
+}
+```

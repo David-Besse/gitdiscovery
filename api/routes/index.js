@@ -1,5 +1,6 @@
 import express from 'express';
-import { getPokemonByName, getPokemonsByNumber } from '../controllers/pokemonController.js';
+
+import { getPokemonByName, getPokemonsByNumber, getRegionByNumber } from '../controllers/pokemonController.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -10,9 +11,9 @@ const router = express.Router();
 
 router.get('/pokemon/:name', getPokemonByName);
 router.get('/pokemons/:number', getPokemonsByNumber);
+router.get('/region/:number', getRegionByNumber);
 router.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../../front", "index.html"));
 });
-
 
 export default router;
